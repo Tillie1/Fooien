@@ -4,13 +4,18 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
-    android:id="@+id/">
+    android:id="@+id/text">
 
-    <TextView android:text="Fooien?" android:layout_width="wrap_content"
+    <TextView android:text="Bereken het bedrag incluisief fooi" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:singleLine="true"
-        android:autoText="false" />
+        android:autoText="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/editBedrag"
+        android:layout_alignStart="@+id/editBedrag"
+        android:layout_alignRight="@+id/button2"
+        android:layout_alignEnd="@+id/button2" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -19,13 +24,13 @@
         android:ems="10"
         android:id="@+id/editBedrag"
         android:autoText="false"
-        android:text="0.00"
         android:textIsSelectable="true"
         android:numeric="decimal"
         android:editable="true"
         android:focusable="true"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="0" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -35,7 +40,8 @@
         android:layout_alignStart="@+id/editText3"
         android:layout_alignRight="@+id/editPercentage"
         android:layout_alignEnd="@+id/editPercentage"
-        android:layout_centerVertical="true" />
+        android:layout_centerVertical="true"
+        android:inputType="text" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -46,27 +52,29 @@
         android:layout_below="@+id/editBedrag"
         android:layout_alignLeft="@+id/editBedrag"
         android:layout_alignStart="@+id/editBedrag"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"
+        android:text="5" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editTextBedragpp"
         android:text="Bedrag per persoon"
+        android:textSize="14sp"
         android:layout_alignParentBottom="true"
-        android:textSize="14dp"
-        android:layout_alignLeft="@+id/editTotaalBedrag"
-        android:layout_alignStart="@+id/editTotaalBedrag" />
+        android:layout_alignRight="@+id/editTotaalBedrag"
+        android:layout_alignEnd="@+id/editTotaalBedrag"
+        android:inputType="none" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:ems="10"
         android:id="@+id/editBedragPerPersoon"
         android:layout_above="@+id/editTextBedragpp"
-        android:layout_alignLeft="@+id/editTextBedragpp"
-        android:layout_alignStart="@+id/editTextBedragpp" />
+        android:layout_alignRight="@+id/button2"
+        android:layout_alignEnd="@+id/button2"
+        android:inputType="text" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -76,27 +84,30 @@
         android:layout_below="@+id/editBedrag"
         android:layout_alignLeft="@+id/editBedrag"
         android:layout_alignStart="@+id/editBedrag"
-        android:textSize="14dp"
-        android:longClickable="false" />
+        android:textSize="14sp"
+        android:longClickable="false"
+        android:inputType="none" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText3"
         android:text="% Fooi"
-        android:textSize="14dp"
+        android:textSize="14sp"
         android:layout_below="@+id/editPercentage"
         android:layout_alignLeft="@+id/editPercentage"
-        android:layout_alignStart="@+id/editPercentage" />
+        android:layout_alignStart="@+id/editPercentage"
+        android:inputType="none" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Per Persoon"
         android:id="@+id/button"
+        android:onClick="onBtnClickPersoon"
         android:layout_below="@+id/editPersonen"
-        android:layout_alignRight="@+id/editBedragPerPersoon"
-        android:layout_alignEnd="@+id/editBedragPerPersoon" />
+        android:layout_alignRight="@+id/button2"
+        android:layout_alignEnd="@+id/button2" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -104,12 +115,14 @@
         android:id="@+id/editText"
         android:text="Bedrag per groep"
         android:singleLine="true"
-        android:textSize="14dp"
+        android:textSize="14sp"
         android:layout_below="@+id/editTotaalBedrag"
         android:layout_alignLeft="@+id/editTotaalBedrag"
         android:layout_alignStart="@+id/editTotaalBedrag"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2" />
+        android:layout_toStartOf="@+id/button2"
+        android:inputType="none"
+        android:layout_alignRight="@+id/editTotaalBedrag"
+        android:layout_alignEnd="@+id/editTotaalBedrag" />
 
     <Button
         android:layout_width="wrap_content"
@@ -117,7 +130,7 @@
         android:text="Per Groep"
         android:id="@+id/button2"
         android:clickable="true"
-        android:onClick="onBtnClick"
+        android:onClick="onBtnClickGroep"
         android:layout_alignTop="@+id/editText3"
         android:layout_alignRight="@+id/editTotaalBedrag"
         android:layout_alignEnd="@+id/editTotaalBedrag" />
@@ -127,22 +140,24 @@
         android:layout_height="wrap_content"
         android:id="@+id/editPersonen"
         android:layout_below="@+id/editText"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:layout_toEndOf="@+id/editText5"
-        android:layout_toRightOf="@+id/editText5" />
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button"
+        android:text="1"
+        android:inputType="number" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText5"
+        android:id="@+id/editText4"
         android:text="Aantal personen"
         android:singleLine="false"
-        android:textSize="14dp"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_alignRight="@+id/editTextBedragpp"
-        android:layout_alignEnd="@+id/editTextBedragpp" />
+        android:textSize="14sp"
+        android:layout_above="@+id/button"
+        android:layout_toRightOf="@+id/editPersonen"
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:inputType="none" />
 
 </RelativeLayout>

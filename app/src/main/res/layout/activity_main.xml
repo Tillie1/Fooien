@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView android:text="Fooien?" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:singleLine="true"
+        android:autoText="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/editBedrag"
+        android:autoText="false"
+        android:text="0.00"
+        android:textIsSelectable="true"
+        android:numeric="decimal"
+        android:editable="true"
+        android:focusable="true"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTotaalBedrag"
+        android:layout_alignLeft="@+id/editText3"
+        android:layout_alignStart="@+id/editText3"
+        android:layout_alignRight="@+id/editPercentage"
+        android:layout_alignEnd="@+id/editPercentage"
+        android:layout_centerVertical="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editPercentage"
+        android:layout_below="@+id/editBedrag"
+        android:layout_alignLeft="@+id/editBedrag"
+        android:layout_alignStart="@+id/editBedrag"
+        android:layout_marginTop="30dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextBedragpp"
+        android:text="Bedrag per persoon"
+        android:layout_alignParentBottom="true"
+        android:textSize="14dp"
+        android:layout_alignLeft="@+id/editTotaalBedrag"
+        android:layout_alignStart="@+id/editTotaalBedrag" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/editBedragPerPersoon"
+        android:layout_above="@+id/editTextBedragpp"
+        android:layout_alignLeft="@+id/editTextBedragpp"
+        android:layout_alignStart="@+id/editTextBedragpp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:text="Bedrag"
+        android:layout_below="@+id/editBedrag"
+        android:layout_alignLeft="@+id/editBedrag"
+        android:layout_alignStart="@+id/editBedrag"
+        android:textSize="14dp"
+        android:longClickable="false" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3"
+        android:text="% Fooi"
+        android:textSize="14dp"
+        android:layout_below="@+id/editPercentage"
+        android:layout_alignLeft="@+id/editPercentage"
+        android:layout_alignStart="@+id/editPercentage" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Per Persoon"
+        android:id="@+id/button"
+        android:layout_below="@+id/editPersonen"
+        android:layout_alignRight="@+id/editBedragPerPersoon"
+        android:layout_alignEnd="@+id/editBedragPerPersoon" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:text="Bedrag per groep"
+        android:singleLine="true"
+        android:textSize="14dp"
+        android:layout_below="@+id/editTotaalBedrag"
+        android:layout_alignLeft="@+id/editTotaalBedrag"
+        android:layout_alignStart="@+id/editTotaalBedrag"
+        android:layout_toLeftOf="@+id/button2"
+        android:layout_toStartOf="@+id/button2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Per Groep"
+        android:id="@+id/button2"
+        android:clickable="true"
+        android:onClick="onBtnClick"
+        android:layout_alignTop="@+id/editText3"
+        android:layout_alignRight="@+id/editTotaalBedrag"
+        android:layout_alignEnd="@+id/editTotaalBedrag" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editPersonen"
+        android:layout_below="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_alignRight="@+id/editText2"
+        android:layout_alignEnd="@+id/editText2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText4"
+        android:text="Aantal personen"
+        android:singleLine="false"
+        android:textSize="14dp"
+        android:layout_above="@+id/button"
+        android:layout_alignRight="@+id/editBedragPerPersoon"
+        android:layout_alignEnd="@+id/editBedragPerPersoon"
+        android:layout_toRightOf="@+id/editPersonen"
+        android:layout_toEndOf="@+id/editPersonen" />
+
+</RelativeLayout>

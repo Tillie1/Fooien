@@ -3,7 +3,8 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/">
 
     <TextView android:text="Fooien?" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -126,22 +127,22 @@
         android:layout_height="wrap_content"
         android:id="@+id/editPersonen"
         android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_alignRight="@+id/editText2"
-        android:layout_alignEnd="@+id/editText2" />
+        android:layout_alignRight="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:layout_toEndOf="@+id/editText5"
+        android:layout_toRightOf="@+id/editText5" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText4"
+        android:id="@+id/editText5"
         android:text="Aantal personen"
         android:singleLine="false"
         android:textSize="14dp"
-        android:layout_above="@+id/button"
-        android:layout_alignRight="@+id/editBedragPerPersoon"
-        android:layout_alignEnd="@+id/editBedragPerPersoon"
-        android:layout_toRightOf="@+id/editPersonen"
-        android:layout_toEndOf="@+id/editPersonen" />
+        android:layout_below="@+id/editText"
+        android:layout_alignLeft="@+id/editText"
+        android:layout_alignStart="@+id/editText"
+        android:layout_alignRight="@+id/editTextBedragpp"
+        android:layout_alignEnd="@+id/editTextBedragpp" />
 
 </RelativeLayout>

@@ -55,7 +55,8 @@
         android:layout_alignLeft="@+id/editBedrag"
         android:layout_alignStart="@+id/editBedrag"
         android:layout_marginTop="30dp"
-        android:text="5" />
+        android:text="5"
+        android:textColor="#ffff4355" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -99,7 +100,8 @@
         android:layout_below="@+id/editPercentage"
         android:layout_alignLeft="@+id/editPercentage"
         android:layout_alignStart="@+id/editPercentage"
-        android:inputType="none" />
+        android:inputType="none"
+        android:textColor="#ffff4355" />
 
     <Button
         android:layout_width="wrap_content"
@@ -109,7 +111,9 @@
         android:onClick="onBtnClickPersoon"
         android:layout_below="@+id/editPersonen"
         android:layout_alignRight="@+id/button2"
-        android:layout_alignEnd="@+id/button2" />
+        android:layout_alignEnd="@+id/button2"
+        android:textColor="#ffffffff"
+        android:background="#ffff4355" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -135,7 +139,9 @@
         android:onClick="onBtnClickGroep"
         android:layout_alignTop="@+id/editText3"
         android:layout_alignRight="@+id/editTotaalBedrag"
-        android:layout_alignEnd="@+id/editTotaalBedrag" />
+        android:layout_alignEnd="@+id/editTotaalBedrag"
+        android:background="#ffff4355"
+        android:textColor="#ffffffff" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -147,7 +153,8 @@
         android:layout_toLeftOf="@+id/button"
         android:layout_toStartOf="@+id/button"
         android:text="1"
-        android:inputType="number" />
+        android:inputType="number"
+        android:textColor="#ffff4355" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -160,6 +167,7 @@
         android:layout_toRightOf="@+id/editPersonen"
         android:layout_alignRight="@+id/button"
         android:layout_alignEnd="@+id/button"
-        android:inputType="none" />
+        android:inputType="none"
+        android:textColor="#ffff4355" />
 
 </RelativeLayout>
